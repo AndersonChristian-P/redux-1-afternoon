@@ -31,6 +31,8 @@ class Name extends Component {
     // Send data to Redux state
     store.dispatch({ type: UPDATE_RECIPE_NAME, payload: this.state.name })
     store.dispatch({ type: UPDATE_RECIPE_CATEGORY, payload: this.state.category })
+    this.setState({
+    })
   }
   render() {
     return (
