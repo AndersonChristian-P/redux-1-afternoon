@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import store, { UPDATE_RECIPE_NAME, UPDATE_RECIPE_CATEGORY } from "../../store"
+import store, { UPDATE_RECIPE_NAME, UPDATE_RECIPE_CATEGORY } from "./../../store"
 import "./Name.css";
 
 class Name extends Component {
