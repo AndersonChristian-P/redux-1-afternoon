@@ -5,12 +5,17 @@ import "./Name.css";
 
 class Name extends Component {
   constructor(props) {
+
+    const reduxStore = store.getState()
+
     super(props);
     this.state = {
-      name: '',
-      category: ''
+      name: reduxStore.recipeName,
+      category: reduxStore.recipeCategory,
     };
   }
+
+
   handleNameChange(nameVal) {
     this.setState({
       name: nameVal
