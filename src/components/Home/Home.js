@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import RecipeCard from "./../RecipeCard/RecipeCard";
 import "./Home.css";
-import store, { CLEAR_FIELDS } from "./../../store"
+import store, { CLEAR_FIELDS, DELETE_RECIPE } from "./../../store"
 
 class Home extends Component {
   constructor(props) {
@@ -19,6 +19,11 @@ class Home extends Component {
     store.dispatch({ type: CLEAR_FIELDS })
   }
 
+  deleteRecipe = (index) => {
+    console.log(index)
+    // store.dispatch({ type: DELETE_RECIPE, payload: index })
+  }
+
   render() {
 
     const recipes = this.state.recipes.map((recipe, i) => {
@@ -31,6 +36,7 @@ class Home extends Component {
           authorLast={recipe.authorLastName}
           ingredients={recipe.ingredients}
           instructions={recipe.instructions}
+          deleteRecipe={this.deleteRecipe}
         />
       );
     });

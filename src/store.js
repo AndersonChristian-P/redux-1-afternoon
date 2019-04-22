@@ -19,6 +19,7 @@ export const INGREDIENTS = "INGREDIENTS"
 export const INSTRUCTIONS = "INSTRUCTIONS"
 export const RECIPES = "RECIPES"
 export const CLEAR_FIELDS = "CLEAR_FIELDS"
+export const DELETE_RECIPE = "DELETE_RECIPE"
 
 function reducer(state = initialState, action) {
   switch (action.type) {
@@ -40,6 +41,13 @@ function reducer(state = initialState, action) {
       return { ...state, recipes: [...state.recipes, recipe] }
     case CLEAR_FIELDS:
       return { ...state, recipeName: "", recipeCategory: "", authorFirstName: "", authorLastName: "", ingredients: [], instructions: [] }
+    case DELETE_RECIPE:
+      return {}
+    // const index = 
+    // return { ...state, recipies: () => {recipies.splice(index, 1)} }
+
+    // let index = state.recipes.findIndex(val => val.recipeName === action.payload)
+    // kit.splice(index, 1, newItem)
     default:
       return state
   }
